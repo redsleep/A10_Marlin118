@@ -14590,18 +14590,18 @@ void setup() {
  *  - Call endstop manager
  *  - Call LCD update
  */
-void loop() {
+void loop() {//this is me.
   if (commands_in_queue < BUFSIZE) get_available_commands();//»ñÈ¡ÃüÁî1
 
   #if ENABLED(SDSUPPORT)
     card.checkautostart(false);
   #endif
 
-  if (commands_in_queue) {
+  if (commands_in_queue) {//this is me.
 
     #if ENABLED(SDSUPPORT)
 
-      if (card.saving) {
+      if (card.saving) {//this is me.
         char* command = command_queue[cmd_queue_index_r];
         if (strstr_P(command, PSTR("M29"))) {
           // M29 closes the file
@@ -14706,4 +14706,9 @@ void loop() {
   }
   endstops.report_state();
   idle();
+}
+
+void nnn()
+{
+	
 }
